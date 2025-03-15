@@ -12,14 +12,12 @@ def get_char_count(path_to_file):
         file_contents = f.read().split()
         char_count = {}
         for word in file_contents:
-            letters = word.split()
+            letters = list(word.lower())
             for letter in letters:
-                print(letter)
-                # lower_case_letter = letter.lower()
-                # if lower_case_letter in char_count:
-                #     char_count[lower_case_letter] += 1
-                # else:
-                #     char_count[lower_case_letter] = 1
+                if letter in char_count:
+                    char_count[letter] += 1
+                else:
+                    char_count[letter] = 1
     print(char_count)
 
 
